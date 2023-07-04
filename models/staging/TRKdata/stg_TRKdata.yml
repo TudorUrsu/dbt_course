@@ -1,0 +1,26 @@
+version: 2
+
+models: 
+  - name: TRK_263_Lead_sources_analysis_eMAG_Card
+    description: lead sources analysis for eMAG Card
+    columns: 
+      - name: DATE
+        description: the date
+        tests: 
+          - unique 
+          - not_null
+              
+  - name: Sales_report_for_DFP_SAMSUNG
+    description: sales report for Samsung
+    columns: 
+      - name: HIT_TIMESTAMP
+        description: '{{ doc("tracking_data_documentation") }}'
+        tests:
+          - unique
+          - not_null 
+      #- name: ACTION_TYPE
+      #  tests:
+      #    - accepted_values:
+      #      - values:
+      #        - IMPRESSION
+            

@@ -1,0 +1,29 @@
+version: 2
+
+sources: 
+  - name: TRKdata
+    description: a clone of BigQuery tracking data tables
+    database: emag-reporting-dev
+    tables: 
+      - name: TRK_263_Lead_sources_analysis_eMAG_Card
+        description: lead sources analysis for eMAG Card
+
+      - name: TRK_238_Organic_Traffic_LP_is_search
+        description: organic traffic data where the landing page is search
+
+      - name: Sales_report_for_DFP_SAMSUNG
+        description: sales report for samsung
+        columns:
+          - name: HIT_TIMESTAMP
+            description: the hit timestamp
+            tests: 
+              - not_null
+        #loaded_at_field: {{as_timestamp(DATA)}}
+        #freshness: 
+          #warn_after:
+            #count: 12
+            #period: hour
+          #error_after:
+            #count: 24
+            #period: hour
+        
