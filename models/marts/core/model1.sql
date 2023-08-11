@@ -1,3 +1,7 @@
+{{ config(
+    materialized = 'ephemeral'
+)}}
+
 with sales_Samsung as (
     select * 
     from {{ref ('stg_sales_report_Samsung') }}
